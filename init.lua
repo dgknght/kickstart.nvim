@@ -73,6 +73,9 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- rails
+  'tpope/vim-rails',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   { -- LSP Configuration & Plugins
@@ -195,6 +198,9 @@ require('lazy').setup({
 -- Set highlight on search
 vim.o.hlsearch = true
 
+-- nowrap by default
+vim.o.wrap = false
+
 -- Make line numbers default
 vim.wo.number = true
 
@@ -240,7 +246,10 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 -- clear highlight search
-vim.keymap.set('n', '<CR>', ':noh<CR><CR>', {noremap = true})
+vim.keymap.set('n', '<CR>', ':noh<CR>', {noremap = true})
+-- fold on indentation
+vim.keymap.set('n', '<Leader>zi', ':set foldmethod=indent<CR>zM')
+vim.keymap.set('n', '<Leader>zm', ':set foldmethod=manual<CR>zR')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -280,7 +289,7 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
-vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
