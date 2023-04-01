@@ -76,6 +76,12 @@ require('lazy').setup({
   -- rails
   'tpope/vim-rails',
 
+  -- clojure
+  'tpope/vim-surround',
+  'tpope/vim-sexp',
+  'tpope/vim-sexp-mappings-for-regular-people',
+  'luochen1990/rainbow',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   { -- LSP Configuration & Plugins
@@ -205,7 +211,7 @@ vim.o.wrap = false
 vim.wo.number = true
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+-- vim.o.mouse = 'a'
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -235,6 +241,17 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- enable rainbow parentheses by default
+vim.g.rainbow_active = 1
+
+-- disable sexp mappings that drive me nuts
+vim.g.sexp_mappings = {
+  sexp_swap_list_backward = '',
+  sexp_swap_list_forward = '',
+  sexp_swap_element_backward = '',
+  sexp_swap_element_forward = ''
+}
 
 -- [[ Basic Keymaps ]]
 
