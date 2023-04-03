@@ -82,7 +82,7 @@ require('lazy').setup({
 
   -- clojure
   'tpope/vim-surround',
-  'tpope/vim-sexp',
+  'guns/vim-sexp',
   'tpope/vim-sexp-mappings-for-regular-people',
   'luochen1990/rainbow',
   'clojure-vim/vim-cider',
