@@ -211,6 +211,10 @@ require('lazy').setup({
       require('onedark').setup {
         -- Set a style preset. 'dark' is default.
         style = 'deep', -- dark, darker, cool, deep, warm, warmer, light
+        -- toggle theme style
+        toggle_style_key = '<leader>ts',
+        -- toggle theme style
+        toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }
       }
       require('onedark').load()
     end,
