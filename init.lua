@@ -241,6 +241,14 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',
+  { 'akinsho/git-conflict.nvim', version = '*', config = true },
+  'clojure-vim/vim-cider',
+  'tpope/vim-fireplace',
+  'tpope/vim-surround',
+  'guns/vim-sexp',
+  'tpope/vim-sexp-mappings-for-regular-people',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -712,7 +720,7 @@ require('lazy').setup({
       --
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local ensure_installed = vim.tbl_keys(servers or {})
+      local ensure_installed = vim.tbl_keys(servers or { 'clojure' })
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
       })
