@@ -93,6 +93,14 @@ vim.g.maplocalleader = ','
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- Disable sexp mappings that do more harm than good
+vim.g.sexp_mappings = {
+  sexp_swap_list_backward = '',
+  sexp_swap_list_forward = '',
+  sexp_swap_element_backward = '',
+  sexp_swap_element_forward = '',
+}
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
