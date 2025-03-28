@@ -101,6 +101,8 @@ vim.g.sexp_mappings = {
   sexp_swap_element_forward = '',
 }
 
+vim.g.autoformat = false
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
